@@ -2,14 +2,15 @@ package com.bieganski;
 
 import java.util.Objects;
 
-public class Franc extends Money{
+public class Franc extends Money {
 
-    public Franc(int amount) {
-        this.amount = amount;
+    Franc(int amount, String currency) {
+        super(amount, currency);
     }
 
-    Franc times(int number) {
-        return new Franc(amount * number);
+    @Override
+    Money times(int number) {
+        return Money.franc(amount * number);
     }
 
     @Override

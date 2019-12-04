@@ -4,14 +4,13 @@ import java.util.Objects;
 
 public class Dollar extends Money {
 
-    public Dollar(int amount) {
-        this.amount = amount;
+    public Dollar(int amount, String currency) {
+        super(amount, currency);
     }
 
     Money times(int number) {
-        return new Dollar(amount * number);
+        return Money.dollar(amount * number);
     }
-
 
 
     @Override
