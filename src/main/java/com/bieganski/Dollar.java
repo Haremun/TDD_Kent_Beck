@@ -1,10 +1,13 @@
 package com.bieganski;
 
 public class Dollar {
-    int amount = 10;
-    public Dollar(int amount) {
-    }
-    void times(int number){
+    int amount;
 
+    public Dollar(int amount) {
+        this.amount = amount;
+    }
+
+    Dollar times(int number) {
+        return new Dollar(amount * number);
     }
 }
