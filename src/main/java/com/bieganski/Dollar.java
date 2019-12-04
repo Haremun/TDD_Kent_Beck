@@ -8,11 +8,6 @@ public class Dollar extends Money {
         super(amount, currency);
     }
 
-    Money times(int number) {
-        return Money.dollar(amount * number);
-    }
-
-
     @Override
     public int hashCode() {
         return Objects.hash(amount);

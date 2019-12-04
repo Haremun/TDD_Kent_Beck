@@ -9,11 +9,6 @@ public class Franc extends Money {
     }
 
     @Override
-    Money times(int number) {
-        return Money.franc(amount * number);
-    }
-
-    @Override
     public int hashCode() {
         return Objects.hash(amount);
     }
