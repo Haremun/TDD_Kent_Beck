@@ -2,23 +2,23 @@ package com.bieganski;
 
 import java.util.Objects;
 
-public class Dollar {
+public class Franc {
     private int amount;
 
-    public Dollar(int amount) {
+    public Franc(int amount) {
         this.amount = amount;
     }
 
-    Dollar times(int number) {
-        return new Dollar(amount * number);
+    Franc times(int number) {
+        return new Franc(amount * number);
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Dollar dollar = (Dollar) o;
-        return amount == dollar.amount;
+        Franc franc = (Franc) o;
+        return amount == franc.amount;
     }
 
     @Override
