@@ -7,22 +7,23 @@ public class DollarTest {
 
     @Test
     public void testMulti(){
-        Dollar five = new Dollar(5);
-        Assert.assertEquals(new Dollar(10), five.times(2));
-        Assert.assertEquals(new Dollar(25), five.times(5));
+        Money five = Money.dollar(5);
+        Assert.assertEquals(Money.dollar(10), five.times(2));
+        Assert.assertEquals(Money.dollar(25), five.times(5));
     }
     @Test
     public void testFrancMulti(){
-        Franc five = new Franc(5);
-        Assert.assertEquals(new Franc(10), five.times(2));
-        Assert.assertEquals(new Franc(25), five.times(5));
+        Money five = Money.franc(5);
+        Assert.assertEquals(Money.franc(10), five.times(2));
+        Assert.assertEquals(Money.franc(25), five.times(5));
     }
     @Test
     public void testEquality(){
-        Assert.assertTrue(new Dollar(5).equals(new Dollar(5)));
-        Assert.assertFalse(new Dollar(5).equals(new Dollar(6)));
-        Assert.assertTrue(new Franc(5).equals(new Franc(5)));
-        Assert.assertFalse(new Franc(5).equals(new Franc(6)));
+        Assert.assertTrue(Money.dollar(5).equals(Money.dollar(5)));
+        Assert.assertFalse(Money.dollar(15).equals(Money.dollar(6)));
+        Assert.assertTrue(Money.franc(5).equals(Money.franc(5)));
+        Assert.assertFalse(Money.franc(35).equals(Money.franc(6)));
+        Assert.assertFalse(Money.dollar(7).equals(Money.franc(7)));
     }
     @Test
     public void testEquality2(){
