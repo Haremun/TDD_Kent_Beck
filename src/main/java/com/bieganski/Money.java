@@ -1,6 +1,6 @@
 package com.bieganski;
 
-class Money implements Expression{
+class Money implements Expression {
     protected int amount;
     protected String currency;
 
@@ -12,12 +12,18 @@ class Money implements Expression{
     Money times(int multiplier) {
         return new Money(amount * multiplier, currency);
     }
-    Expression plus(Money addend){
+
+    Expression plus(Money addend) {
         return new Sum(this, addend);
     }
 
     String currency() {
         return currency;
+    }
+
+    public Money reduce(Bank bank, String to) {
+        int rate = bank.rate(currency, to);
+        return new Money(amount / rate, to);
     }
 
     static Money dollar(int amount) {
